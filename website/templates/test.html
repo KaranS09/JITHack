@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>just a test</title>
+    <!-- CSS HERE -->
+    <style>
+      #footer {
+        display: flex;
+        background-color: black;
+        color: white;
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+        height: 200px;
+        justify-content: center;
+      }
+      #end-center-left {
+        text-align: center;
+        display: inline-block;
+        padding-right: 200px;
+        margin-top: 50px;
+      }
+
+      #end-center-right {
+        display: inline-block;
+        text-align: start;
+        margin-top: 50px;
+      }
+
+      .img-1 {
+        height: 50px;
+        padding: 5px;
+        margin: 15px;
+        border-radius: 100%;
+        margin-top: none;
+      }
+
+      #icons {
+        display: flex;
+        background: black;
+        justify-content: center;
+        height: 150px;
+        margin-bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Delete this div -->
+    <div style="height: 1000px"><h1>New proj</h1></div>
+    <!-- footer from here -->
+    <div id="footer">
+      <div id="end-center-left">
+        <h2>Working to keep you safe</h2>
+        <h4>Quintessential Coders</h4>
+      </div>
+
+      <div id="end-center-right">
+        <h4>Contact Us</h4>
+        <div>Ph No: +9100000000</div>
+        <div>e-mail: inaheartbeat@gmail.com</div>
+      </div>
+    </div>
+
+    <div id="icons">
+      <img
+        class="img-1"
+        src="{{url_for('static', filename='images/icons/thumbnails/insta.jfif')}}"
+        alt=""
+      />
+      <img
+        class="img-1"
+        src="{{url_for('static', filename='images/icons/thumbnails/linkedin.png')}}"
+        alt=""
+      />
+      <img
+        class="img-1"
+        src="{{url_for('static', filename='images/icons/thumbnails/twitter.png')}}"
+        alt=""
+      />
+      <img
+        class="img-1"
+        src="{{url_for('static', filename='images/icons/thumbnails/facebook.png')}}"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

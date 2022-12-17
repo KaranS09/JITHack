@@ -1,0 +1,41 @@
+.bg-bottom {
+  background-color: rgb(219, 223, 227);
+}
+
+.end-bar {
+  display: flex;
+  background-color: rgb(219, 223, 227);
+  margin-left: 0px;
+  height: 120px;
+  color: white;
+  justify-content: center;
+  margin-bottom: none;
+}
+
+.end-center-left {
+  text-align: center;
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 50px;
+}
+
+.end-center-right {
+  display: inline-block;
+  text-align: start;
+}
+
+.icons {
+  display: flex;
+  background-color: rgb(219, 223, 227);
+  padding-bottom: 30px;
+  justify-content: center;
+  margin-top: none;
+}
+
+.img-1 {
+  height: 70px;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 100%;
+  margin-top: none;
+}

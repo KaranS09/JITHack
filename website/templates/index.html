@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In a Heart Beat</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/2883/2883911.png"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/styles.css') }}"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+NP+Hmong:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="home">
+      <!--* NAVBAR -->
+      <nav class="navbar navbar-expand-lg text-light bg-dark sticky-top">
+        <div class="container-fluid CustomNavbar">
+          <a class="navbar-brand text-light NavBrand" href="#home">
+            In a Heart Beat
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-light" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light text-light NavText NavLink"
+                  aria-current="page"
+                  href="#home"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light NavText NavLink" href="#features">
+                  Features
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light NavText NavLink"
+                  href="{{url_for('blog_page')}}"
+                >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!--* Carousel -->
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide carousel-fade"
+        data-bs-ride="false"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="{{url_for('static', filename='images/img1.jpg')}}"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block CarouselText">
+              <h5>Heart Attack-Major Evil Nowadays.</h5>
+
+              <p>
+                A heart attack is a medical emergency. A heart attack usually
+                occurs when a blood clot blocks blood flow to the heart. Without
+                blood, tissue loses oxygen and dies.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{{url_for('static', filename='images/img2.jpg')}}"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block CarouselText">
+              <h5>Can We diagonise it technically?</h5>
+              <p>
+                A handly method is implemented by us where we can predict the
+                heart attack possibility of the person using Machine Learning
+                and Deep Learning
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{{url_for('static', filename='images/img3.jpg')}}"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block CarouselText">
+              <h5>Keeping Oneself Healthy</h5>
+              <p>
+                Eating an unhealthy diet that is high in fat will make hardening
+                of the arteries (atherosclerosis) worse and increase your risk
+                of a heart attack. Continuing to eat high-fat foods will cause
+                more fatty plaques to build up in your arteries.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!--* Welcome -->
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark Welcome">
+      <div class="">
+        <img
+          src="https://cdn.pixabay.com/photo/2020/04/22/19/29/heart-5079717__340.png"
+          class="WelcomeImage"
+        />
+        <h1 class="display-4 font-italic WelcomeTitle">Welcome!</h1>
+        <div class="WelcomePara">
+          <p class="lead my-3">
+            In a Heartbeat is a website that aims to predict whether a person is
+            at risk of getting a heart attack or not with the power of machine
+            learning.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--* Description -->
+    <div class="card-group" id="features">
+      <div class="card">
+        <img
+          class="card-img-top CardImage"
+          src="{{url_for('static', filename='images/HeartStethoscope.jpg')}}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title CardTitle">Brief Intro</h5>
+          <p class="card-text CardText">
+            During recent years, the rate of heart attacks has been on the rise.
+            In India alone, there were arround 28,449 deaths due to heart
+            attacks. The edge that we have over other products is that we have
+            the luxury of a pre-trained model which can predict the heart attack
+            to a great extent.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          class="card-img-top CardImage"
+          src="https://c4.wallpaperflare.com/wallpaper/391/960/943/love-wallpaper-preview.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title CardTitle">Easy to Use</h5>
+          <p class="card-text CardText">
+            Most people are apprehensive to visit a gloom environment like that
+            of a hospital, so our product aims to eliminate the unease and
+            instill comfort.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          class="card-img-top CardImage"
+          src="https://wallpaperaccess.com/full/3810369.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title CardTitle">Real Time</h5>
+          <p class="card-text CardText">
+            Our interactive website allows the user to enter his medical details
+            such as oxygen %, heart rate, etc. and submit it. Our pre-trained
+            machine learning model will accurately predict whether the person
+            will get heart attack or not. Based on the result appropriate course
+            of action will be provided to the users.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <form action="{{url_for('home_page')}}" method="post">
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-2">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            placeholder="Enter Age"
+            name="age"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-2">
+          <select
+            class="form-select border-dark"
+            aria-label="Default select example"
+            name="gender"
+          >
+            <option selected>Select Your Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"
+          >Chest Pain</label
+        >
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            name="cp"
+            placeholder="Enter the type of Chest Pain "
+          />
+          <p class="text-danger">
+            Value 1: typical angina <br />
+            Value 2: atypical angina <br />
+            Value 3: non-anginal pain <br />
+            Value 4: asymptomatic
+          </p>
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"
+          >Cholestrol level</label
+        >
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            name="chol"
+            placeholder="Enter Your Cholestrol level"
+          />
+          <p class="text-primary">Cholestoral in mg/dl</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"
+          >Rest_Ecg</label
+        >
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            name="restecg"
+            placeholder="Enter Rest_Ecg "
+          />
+          <p class="text-success">
+            Rest_Ecg : resting electrocardiographic results
+          </p>
+          <p class="text-primary">
+            Value 0: normal <br />
+            Value 1: having ST-T wave abnormality (T wave inversions and/or ST
+            elevation or depression of > 0.05 mV) <br />
+            Value 2: showing probable or definite left ventricular hypertrophy
+            by Estes' criteria
+          </p>
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Exang</label>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            placeholder="Enter Exang"
+            name="exang"
+          />
+          <p class="text-primary">
+            exang: exercise induced angina (1 = yes; 0 = no)
+          </p>
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">OldPeak</label>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            placeholder="Enter the OldPeak Value"
+            name="oldpeak"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3 my-5 mx-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Thall</label>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="inputEmail3"
+            placeholder="Enter the thalassemia Value"
+            name="thall"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary mx-3">Submit</button>
+    </form>
+
+    {% if result == 0 %}
+    <div
+      class="alert alert-warning alert-dismissible fade show space"
+      role="alert"
+    >
+      <strong>Great!</strong> You are doing well.Stay fit Stay healthy.
+      <hr />
+      <p>
+        For further improvements in the you can refer the Dietary Plans we
+        <a href="{{url_for('blog_page')}}">have</a> provided. <br />Thank You!
+        😇
+      </p>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endif %} {% if result == 1 %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/dietary.css') }}"
+    />
+    <div
+      class="alert alert-warning alert-dismissible fade show bg-danger space"
+      role="alert"
+    >
+      <strong class="text-warning">Oops!</strong
+      ><span class="text-warning">Your heart seems to be Unhealthy.</span>
+      <hr />
+      <p class="text-warning">
+        Please Contact the nearest Doctor as soon as possible.Take good care of
+        yourself,we have a well organised Dietary plan for you please do refer
+        it <a href="{{url_for('blog_page')}}">have</a><br />Thank You! Stay
+        Healthy. 😇
+      </p>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    {% endif %}
+
+    <!--* Heart Animation -->
+    <div class="enclose">
+      <div class="heart">Your Heart</div>
+    </div>
+
+    <!--* Footer -->
+    <div>
+      <div id="footer">
+        <div id="end-center-left">
+          <h2>Working to keep you safe</h2>
+          <h4>Quintessential Coders &copy 2023</h4>
+        </div>
+
+        <div id="end-center-right">
+          <h4>Contact Us</h4>
+          <div>Ph No: +9100000000</div>
+          <div>e-mail: inaheartbeat@gmail.com</div>
+        </div>
+      </div>
+
+      <div id="icons">
+        <img
+          class="img-1"
+          src="{{url_for('static', filename='images/facebook.png')}}"
+          alt="Facebook"
+        />
+        <img
+          class="img-1"
+          src="{{url_for('static', filename='images/linkedin.png')}}"
+          alt="Linkedin"
+        />
+        <img
+          class="img-1"
+          src="{{url_for('static', filename='images/insta.jfif.jpg')}}"
+          alt="Instagram"
+        />
+        <img
+          class="img-1"
+          src="{{url_for('static', filename='images/twitter.png')}}"
+          alt="Twitter"
+        />
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
