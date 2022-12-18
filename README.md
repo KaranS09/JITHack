@@ -10,3 +10,13 @@ Most people are apprehensive to visit a gloom environment like that of a hospita
 Our interactive website allows the user to enter his medical details, such as oxygen %, heart rate, etc. and submit it.  
 Our pre-trained machine learning model will accurately predict whether the person will get heart attack or not.  
 Based on the result, appropirate course of action will be provided to the user.
+
+## Tecnologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Python
+- Flask
+- Machine Learning
+- Deep Learning (Tensorflow - Keras)
