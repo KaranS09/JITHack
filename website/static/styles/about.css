@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman";
+  padding-left: 0rem;
+}
+h2 {
+  font-weight: bolder;
+  padding-top: 2rem;
+  left: 1.5rem;
+}
+
+#about > img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.discri > img {
+  float: right;
+  padding: 1.5rem;
+  width: 200px;
+  height: 200px;
+}
+
+.happen > img {
+  float: left;
+  padding: 1.5rem;
+  width: 200px;
+  height: 200px;
+}
+
+.symp > img {
+  float: right;
+  padding: 1.5rem;
+  width: 200px;
+  height: 200px;
+}
+h3 {
+  padding-left: 4rem;
+}
+.causes {
+  padding-left: 12.5rem;
+}
+
+.consequence {
+  padding-left: 1rem;
+}
+
+.conse > img {
+  float: left;
+  padding: 1.5rem;
+  width: 200px;
+  height: 200px;
+}

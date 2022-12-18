@@ -72,6 +72,14 @@
                   class="nav-link text-light NavText NavLink"
                   href="{{url_for('blog_page')}}"
                 >
+                  Dietary Plans
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light NavText NavLink"
+                  href="{{url_for('about_page')}}"
+                >
                   About
                 </a>
               </li>
@@ -80,10 +88,14 @@
         </div>
       </nav>
     </div>
+    <h2 style="display: flex; justify-content: center; margin-top: 40px">
+      Your Personalised Diet Plan
+    </h2>
     <div id="diet">
       <div class="cards CARDS">
         <div class="card card1 CARD CARD1">
           <div class="container CONTAINER">
+            {% if age == -1 %}
             <img
               class="imgDiet"
               src="{{url_for('static', filename='images/healthy-plate-overhead.webp')}}"
@@ -91,7 +103,7 @@
             />
           </div>
           <div class="details DETAILS">
-            <h3>1.Control Your Portion Size</h3>
+            <h3>Control Your Portion Size</h3>
             <p>
               How much you eat is just as important as what you eat. Overloading
               your plate, taking seconds and eating until you feel stuffed can
@@ -114,11 +126,113 @@
               skill. You may need to use measuring cups and spoons or a scale
               until you're comfortable with your judgment.
             </p>
+            {% endif %} {% if age > 0 and age <= 18 %}
+            <img
+              class="AgeImg"
+              src="{{url_for('static', filename='images/language-development-4-5-years.jpg')}}"
+              alt="Tobacco"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>Age Below 18</h3>
+            <p>
+              As kids enter their teen years, they might lose interest in
+              physical activity. Between school, homework, friends, and even
+              part-time jobs, they're juggling a lot of interests and
+              responsibilities. But regular physical activity can help your teen
+              feel more energetic, improve focus and attention, and promote a
+              better outlook. And regular physical activity can help your child
+              maintain a healthy weight and prevent heart disease, diabetes, and
+              other medical problems later in life. Fitness in the Teen Years
+              Physical activity guidelines for teens recommend that they get 1
+              hour or more of moderate to strong physical activity daily. In
+              addition: Most of the physical activity should be aerobic, where
+              they use large muscles and continue for a period of time. Examples
+              of aerobic activity are running, swimming, and dancing. Any
+              moderate to strong activity counts toward the 60-minute goal.
+              Muscle-strengthening and bone-strengthening physical activity
+              should be included at least 3 days a week. Teens can be active in
+              sports and structured exercise programs that include muscle- and
+              bone-strengthening activities. Weight training, under supervision
+              of a qualified adult, can improve strength and help prevent sports
+              injuries.
+            </p>
+            {% endif %}{% if age > 18 and age <= 40 %}
+            <img
+              class="AgeImg"
+              src="{{url_for('static', filename='images/1078578-smoke.webp')}}"
+              alt="vegfruit"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>Age between 18-40</h3>
+            <p>
+              At least 150 minutes a week of moderate intensity activity such as
+              brisk walking. At least 2 days a week of activities that
+              strengthen muscles. Don't get addicted for smoking and alcohol
+              Regular Exercise with balanced diet. Avoid having the junk food
+              .The junk food available nowadays contain more fat and
+              Cholestrol.Physical Activity Healthy Nutrition Getting Adequate
+              Sleep Controlling Stress are the most important things which
+              should be noted for the people between the ages of 18-40.Eating
+              healthy is an important part of a healthy lifestyle and is
+              something that should be taught at a young age. The following are
+              some general guidelines for helping your adolescent eat healthy.
+              It is important to discuss your adolescent's diet with his or her
+              health care provider before making any dietary changes or placing
+              your adolescent on a diet. Eat 3 meals a day, with healthy snacks.
+              Increase fiber in the diet and decrease the use of salt. Drink
+              water. Try to avoid drinks that are high in sugar. Fruit juice can
+              have a lot of calories, so limit your adolescent's intake. Whole
+              fruit is always a better choice. Eat balanced meals. When cooking
+              for your adolescent, try to bake or broil instead of fry. Make
+              sure your adolescent watches (and decreases, if necessary) his or
+              her sugar intake. Eat fruit or vegetables for a snack. Decrease
+              the use of butter and heavy gravies. Eat more chicken and fish.
+              Limit red meat intake, and choose lean cuts when possible.
+            </p>
+            {% endif %}{% if age > 40 %}
+            <img
+              class="AgeImg"
+              src="{{url_for('static', filename='images/flat-design-active-elderly-people-collection_23-2148650018.webp')}}"
+              alt="wholegrain"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>Age above 40</h3>
+            <p>
+              Diet and exercise are the two most important changes you can make.
+              Even if you've never been active, it's never too late to get
+              started. A healthy diet and physical activity are good at any age.
+              As you age, these healthy habits strengthen muscles and bones.
+              Strong muscles and bones reduce serious injuries related to falls.
+              When your muscles are strong, activities like getting up from a
+              chair or opening a door are easier. When lifting weights, start
+              with a 1-pound or 5-pound weight. If you don't have weights, use a
+              can of soup, a book, or a full bottle of water. Keep your weights
+              in the same room as your television. Do a few exercises while you
+              watch. Add more fiber to your diet. Fiber reduces constipation;
+              helps with weight loss; reduces the risk of diabetes,
+              pre-diabetes, heart disease and colon cancer; and lowers your
+              blood cholesterol level. Men over age 50 should get 30 grams of
+              fiber per day; women over age 50 should get 21 grams per day. Good
+              sources of fiber include beans, whole grains, vegetables, and
+              fruit, Try the Mediterranean diet. This heart-healthy diet
+              promotes foods such as fish, fruits, vegetables, beans, and whole
+              grains. It does not include a lot of meat, dairy, or sweets. Drink
+              more water. Water flushes out toxins. Staying hydrated will give
+              you more energy. Eat more whole foods. This means eating food as
+              close to its natural state as possible, like fresh fruits and
+              vegetables and food that is the least processed possible, such as
+              whole grains.
+            </p>
+            {% endif %}
           </div>
         </div>
 
         <div class="card card2 CARD">
           <div class="container CONTAINER">
+            {% if chol == -1 %}
             <img
               class="imgDiet"
               src="{{url_for('static', filename='images/image.webp')}}"
@@ -141,11 +255,94 @@
               ingredients, such as vegetable stir-fry or fresh fruit mixed into
               salads.
             </p>
+            {% endif %} {% if chol < 200 and chol > 0 %}
+            <img
+              src="{{url_for('static', filename='images/beans_greens_for_high_cholesterol_732x549_thumb.webp')}}"
+              alt="lentils"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>Lifestyle for Cholestrol Below 200</h3>
+            <p>
+              You have two kinds of cholesterol in your body: Low-density
+              lipoprotein (LDL) is the unhealthy kind of cholesterol that clogs
+              arteries. You want to keep your level below 100 mg/dL. <br />
+              High-density lipoprotein (HDL) is the healthy kind that helps to
+              clear LDL cholesterol out of your arteries. You want to aim for a
+              level of 60 mg/dL or higher. <br />
+
+              Beans and lentils Fish, especially salmon Olive oil Avocados Nuts
+              and seeds, including chia and flax Natural peanut butter or any
+              nut butter Whole grains, such as oatmeal, quinoa, brown rice or
+              whole-wheat bread Fruit, especially high-fiber fruits like
+              berries, apples and pears Vegetables, especially dark leafy greens
+              and cruciferous vegetables like Brussels sprouts, broccoli and
+              cauliflower Sweet potatoes and winter squash
+            </p>
+            {% endif %}{% if chol > 200 and chol <= 240 %}
+            <img
+              src="{{url_for('static', filename='images/foods-that-lower-cholesterol-1296x728-feature.webp')}}"
+              alt="vegfruit"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>
+              Lifestyle for the people with Cholestrol in the range of 200-240
+            </h3>
+            <p>
+              Eat plenty of fresh fruits and vegetables. Pick “good” fats over
+              “bad” fats. Limit the amount of saturated fat in your diet. Use
+              healthier cooking methods. Meats are a good source of protein. But
+              they contain a lot of cholesterol and saturated fats. Fish, beans,
+              tree nuts, peas, and lentils also offer protein, but without the
+              cholesterol and fats. They also contain fiber and other nutrients.
+              Consider eating one meatless meal each week. Try substituting
+              beans for meat in a favorite recipe, such as lasagna or chili.
+              Snack on a handful of almonds or pecans. Soy is also an excellent
+              source of protein. Good examples of soy include soymilk, edamame
+              (green soybeans), tofu, and soy protein shakes. Get more fiber in
+              your diet.
+            </p>
+            {% endif %}{% if chol > 240 %}
+            <img
+              src="{{url_for('static', filename='images/7-foods-that-people-with-high-cholesterol-must-avoid.png')}}"
+              alt="wholegrain"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>Lifestyle for the High Cholestoral people</h3>
+            <p>
+              1. Eat heart-healthy foods <br />
+              2. Exercise on most days of the week and increase your physical
+              activity <br />
+              3. Quit smoking <br />
+              4. Lose weight <br />
+              5.Avoid drinking of the alcohol. Full-fat dairy Whole milk, butter
+              and full-fat yogurt and cheese are high in saturated fat. Cheese
+              also tends to be high in sodium, and most Americans get too much
+              sodium, too. Limit cheese to about 3 ounces per week, and choose
+              part-skim cheese such as Swiss or mozzarella when cooking. Drink
+              skim (non-fat), 1% or 2% milk to get your calcium intake. Look for
+              non-fat or low-fat yogurt varieties. Use extra-virgin olive oil or
+              avocado oil instead of butter. Red meat Steak, beef roast, ribs,
+              pork chops and ground beef tend to have high saturated fat and
+              cholesterol content. Choose 90% lean ground beef, lean cuts of
+              beef (such as sirloin, tenderloin, filet or flank steak, pork loin
+              or tenderloin), and focus on lower-fat sources of animal protein,
+              such as baked skinless or lean ground poultry. Processed meat You
+              should limit processed meat in general because of its high sodium
+              content and low nutrition. In fact, bacon, sausage and hot dogs
+              are usually made from fatty cuts of beef or pork. If you must eat
+              processed meat, choose minimally processed sausage or deli meat
+              made from lean turkey or chicken.
+            </p>
+            {% endif %}
           </div>
         </div>
 
         <div class="card card3 CARD">
           <div class="container CONTAINER">
+            {% if cp == -1 or cp == 0 %}
             <img
               class="imgDiet"
               src="{{url_for('static', filename='images/Wholegrain-or-Wholemeal.jpg')}}"
@@ -162,6 +359,73 @@
               adventuresome and try a new whole grain, such as whole-grain
               farro, quinoa or barley.
             </p>
+            {% endif %}{% if cp == 1 %}
+            <img
+              src="{{url_for('static', filename='images/Increase-protein-feature.jpg')}}"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>5. Choose low-fat protein sources</h3>
+            <p>
+              Lean meat, poultry and fish, low-fat dairy products, and eggs are
+              some of the best sources of protein. Choose lower fat options,
+              such as skinless chicken breasts rather than fried chicken patties
+              and skim milk rather than whole milk. Fish is a good alternative
+              to high-fat meats. Certain types of fish are rich in omega-3 fatty
+              acids, which can lower blood fats called triglycerides. You'll
+              find the highest amounts of omega-3 fatty acids in cold-water
+              fish, such as salmon, mackerel and herring. Other sources are
+              flaxseed, walnuts, soybeans and canola oil. Legumes — beans, peas
+              and lentils — also are good, low-fat sources of protein and
+              contain no cholesterol, making them good substitutes for meat.
+              Substituting plant protein for animal protein — for example, a soy
+              or bean burger for a hamburger — will reduce fat and cholesterol
+              intake and increase fiber intake.
+            </p>
+            {% endif %}{% if cp == 2 %}
+            <img
+              src="{{url_for('static', filename='images/TooMuchSodiuml-1051727580-770x533-1-650x428.jpg')}}"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>6. Limit or reduce salt (sodium)</h3>
+            <p>
+              Eating too much salt can lead to high blood pressure, a risk
+              factor for heart disease. Limiting salt (sodium) is an important
+              part of a heart-healthy diet. The American Heart Association
+              recommends that: Healthy adults have no more than 2,300 milligrams
+              (mg) of sodium a day (about a teaspoon of salt) Most adults
+              ideally have no more than 1,500 mg of sodium a day Although
+              reducing the amount of salt you add to food at the table or while
+              cooking is a good first step, much of the salt you eat comes from
+              canned or processed foods, such as soups, baked goods and frozen
+              dinners. Eating fresh foods and making your own soups and stews
+              can reduce the amount of salt you eat. If you like the convenience
+              of canned soups and prepared meals, look for ones with no added
+              salt or reduced sodium. Be wary of foods that claim to be lower in
+              sodium because they are seasoned with sea salt instead of regular
+              table salt — sea salt has the same nutritional value as regular
+              salt. Another way to reduce the amount of salt you eat is to
+              choose your condiments carefully. Many condiments are available in
+              reduced-sodium versions. Salt substitutes can add flavor to your
+              food with less sodium.
+            </p>
+            {% endif %}{% if cp == 3 or cp == 4 %}
+            <img
+              src="{{url_for('static', filename='images/a475b8a8-7473-4ac3-94e2-8be04549ee61.jpg')}}"
+              alt="fat"
+            />
+          </div>
+          <div class="details DETAILS">
+            <h3>4. Limit unhealthy fats</h3>
+            <p>
+              Limiting how much saturated and trans fats you eat is an important
+              step to reduce your blood cholesterol and lower your risk of
+              coronary artery disease. A high blood cholesterol level can lead
+              to a buildup of plaques in the arteries, called atherosclerosis,
+              which can increase the risk of heart attack and stroke.
+            </p>
+            {% endif %}
           </div>
         </div>
 
@@ -243,72 +507,6 @@
             </p>
           </div>
         </div>
-
-        <div class="card card7 CARD">
-          <div class="container CONTAINER">
-            <img
-              src="{{url_for('static', filename='images/Healthy-Meals-Mediterranean-Panzanella-Salad-thumb.webp')}}"
-            />
-          </div>
-          <div class="details DETAILS">
-            <h3>7. Plan ahead: Create daily menus</h3>
-            <p>
-              Create daily menus using the six strategies listed above. When
-              selecting foods for each meal and snack, emphasize vegetables,
-              fruits and whole grains. Choose lean protein sources and healthy
-              fats, and limit salty foods. Watch your portion sizes and add
-              variety to your menu choices. For example, if you have grilled
-              salmon one evening, try a black bean burger the next night. This
-              helps ensure that you'll get all of the nutrients the body needs.
-              Variety also makes meals and snacks more interesting.
-            </p>
-          </div>
-        </div>
-
-        <div class="card card8 CARD">
-          <div class="container CONTAINER">
-            <img
-              src="{{url_for('static', filename='images/weight-gain-cake-1024x682.jpg')}}"
-            />
-          </div>
-          <div class="details DETAILS">
-            <h3>8. Allow yourself an occasional treat</h3>
-            <p>
-              Allow yourself an indulgence every now and then. A candy bar or
-              handful of potato chips won't derail your heart-healthy diet. But
-              don't let it turn into an excuse for giving up on your
-              healthy-eating plan. If overindulgence is the exception, rather
-              than the rule, you'll balance things out over the long term.
-              What's important is that you eat healthy foods most of the time.
-              Include these eight tips into your life, and you'll find that
-              heart-healthy eating is both doable and enjoyable. With planning
-              and a few simple substitutions, you can eat with your heart in
-              mind.
-            </p>
-          </div>
-        </div>
-        <div class="card card8 CARD">
-          <div class="container CONTAINER">
-            <img
-              src="{{url_for('static', filename='images/weight-gain-cake-1024x682.jpg')}}"
-            />
-          </div>
-          <div class="details DETAILS">
-            <h3>8. Allow yourself an occasional treat</h3>
-            <p>
-              Allow yourself an indulgence every now and then. A candy bar or
-              handful of potato chips won't derail your heart-healthy diet. But
-              don't let it turn into an excuse for giving up on your
-              healthy-eating plan. If overindulgence is the exception, rather
-              than the rule, you'll balance things out over the long term.
-              What's important is that you eat healthy foods most of the time.
-              Include these eight tips into your life, and you'll find that
-              heart-healthy eating is both doable and enjoyable. With planning
-              and a few simple substitutions, you can eat with your heart in
-              mind.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -317,7 +515,7 @@
       <div id="footer">
         <div id="end-center-left">
           <h2>Working to keep you safe</h2>
-          <h4>Quintessential Coders</h4>
+          <h4>Quintessential Coders &copy 2023</h4>
         </div>
 
         <div id="end-center-right">

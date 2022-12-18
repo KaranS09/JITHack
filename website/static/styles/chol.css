@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    height: 100vh;
+   /*  margin: 20px;
+    text-align: center;
+    line-height: 1.5rem; */
+    display: grid;
+    place-items: center center;
+  }
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    padding: 20px;
+    grid-gap: 40px;
+
+}   
+.card{
+    background:linear-gradient(orange,yellow);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0,18);
+}
+
+.container{
+    position: relative;
+    clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+    
+
+}
+
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+
+.card>.container:after{
+    content:"";
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity:0 ;
+    
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+
+
+.card1>.container:after{
+    background-image: linear-gradient(135deg,orange,purple);
+}
+
+.details{
+    padding: 20px 10px;
+   
+
+}
+
+.details>h3{
+    color: black;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:30px;
+    margin: 10px 0 15px 0;
+    font-weight: bolder;
+    padding-left: 1.5rem;
+}
+
+.details>p{
+   color: black;
+    font-size: 15px;
+    padding-left: 1rem;
+    
+    
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 20px;
+}
